@@ -1,7 +1,7 @@
 apiVersion: vmoperator.vmware.com/v1alpha3
 kind: VirtualMachine
 metadata:
-  name: test-vm2
+  name: test-vm
 spec:
   className: best-effort-large
   imageName: vmi-b02c32b0f7a7c7dec
