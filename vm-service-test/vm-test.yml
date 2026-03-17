@@ -4,7 +4,7 @@ metadata:
   name: test-vm
 spec:
   className: best-effort-large
-  imageName: vmi-f89485cb79c43cd85
+  imageName: vmi-b02c32b0f7a7c7dec
   storageClass: no-data-redundancy
   bootstrap:
     cloudInit:
