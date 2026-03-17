@@ -1,0 +1,66 @@
+apiVersion: vmoperator.vmware.com/v1alpha3
+kind: VirtualMachine
+metadata:
+  name: vm-v5jr
+  namespace: provider-ns02-h94sk
+  labels:
+    vm-selector: vm-v5jr
+    vm-lb-7rf3: vm-lb-selector
+    topology.kubernetes.io/zone: vc-vcf9-mgmt-zone-01
+spec:
+  className: best-effort-xsmall
+  # Friendly image name: ob-25217800-photon-5-amd64-v1.35.0---vmware.2-vkr.4
+  imageName: vmi-07d8efc0a16501d67
+  storageClass: vc-vcf9-wld01-cl01-vsan-storage-policy
+  powerState: PoweredOn
+  volumes:
+    - name: vm-v5jr-pvc-0
+      persistentVolumeClaim:
+        claimName: vm-v5jr-pvc-0
+  network:
+    interfaces:
+      - name: eth87
+        network:
+          name: vm-default
+          kind: SubnetSet
+    hostName: vm-v5jr
+    domainName: corp.internal
+  bootstrap:
+    cloudInit:
+      cloudConfig:
+        defaultUserEnabled: true
+        ssh_pwauth: true
+
+
+apiVersion: vmoperator.vmware.com/v1alpha3
+kind: VirtualMachineService
+metadata:
+  name: vm-lb-7rf3
+  namespace: provider-ns02-h94sk
+spec:
+  selector:
+    vm-lb-7rf3: vm-lb-selector
+  type: LoadBalancer
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: vm-v5jr-pvc-0
+  namespace: provider-ns02-h94sk
+  labels:
+    vm-selector: vm-v5jr
+  annotations:
+    csi.vsphere.volume-requested-topology: '[{"topology.kubernetes.io/zone":"vc-vcf9-mgmt-zone-01"}]'
+spec:
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Block
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: vc-vcf9-wld01-cl01-vsan-storage-policy
