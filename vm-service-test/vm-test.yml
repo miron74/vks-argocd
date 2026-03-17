@@ -1,0 +1,11 @@
+apiVersion: vmoperator.vmware.com/v1alpha3
+kind: VirtualMachine
+metadata:
+  name: test-vm
+spec:
+  className: best-effort-large
+  imageName: vmi-f89485cb79c43cd85
+  storageClass: no-data-redundancy
+  bootstrap:
+    cloudInit:
+      cloudConfig: {}
