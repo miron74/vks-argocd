@@ -1,0 +1,11 @@
+apiVersion: vmoperator.vmware.com/v1alpha3
+kind: VirtualMachine
+metadata:
+  name: application
+spec:
+  className: best-effort-large
+  imageName: vmi-b02c32b0f7a7c7dec
+  storageClass: no-data-redundancy
+  bootstrap:
+    cloudInit:
+      cloudConfig: {}
