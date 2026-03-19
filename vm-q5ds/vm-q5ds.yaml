@@ -1,0 +1,170 @@
+apiVersion: vmoperator.vmware.com/v1alpha3
+kind: VirtualMachine
+metadata:
+  annotations:
+    virtualmachine.vmoperator.vmware.com/first-boot-done: 'true'
+    vmoperator.vmware.com/backup-version: '1770559868766'
+    vmoperator.vmware.com/bootstrap-hash-customspec: 61dc1426165cbe88
+    vmoperator.vmware.com/conversion: >-
+      {"apiVersion":"vmoperator.vmware.com/v1alpha4","kind":"VirtualMachine","spec":{"biosUUID":"2e4665b8-d909-45d5-b312-a193dad28852","className":"best-effort-xsmall","image":{"kind":"ClusterVirtualMachineImage","name":"vmi-b02c32b0f7a7c7dec"},"imageName":"vmi-b02c32b0f7a7c7dec","instanceUUID":"e0dea771-eab7-449c-b26e-de4e3388e823","network":{"interfaces":[{"name":"eth0","network":{"apiVersion":"crd.nsx.vmware.com/v1alpha1","kind":"SubnetSet","name":""}}]},"powerOffMode":"TrySoft","powerState":"PoweredOn","promoteDisksMode":"Online","restartMode":"TrySoft","storageClass":"vc-vcf9-mgmt-cl01-vsan-storage-policy","suspendMode":"TrySoft"},"status":{"biosUUID":"2e4665b8-d909-45d5-b312-a193dad28852","changeBlockTracking":false,"class":{"apiVersion":"vmoperator.vmware.com/v1alpha4","kind":"VirtualMachineClass","name":"best-effort-xsmall"},"conditions":[{"lastTransitionTime":"2026-03-16T16:01:59Z","message":"","reason":"True","status":"True","type":"GuestCustomization"},{"lastTransitionTime":"2026-02-08T14:11:10Z","message":"Backup
+      version:
+      1770559868766","reason":"True","status":"True","type":"VirtualMachineBackupUpToDate"},{"lastTransitionTime":"2026-02-08T14:10:50Z","message":"","reason":"True","status":"True","type":"VirtualMachineClassConfigurationSynced"},{"lastTransitionTime":"2026-02-08T13:59:48Z","message":"","reason":"True","status":"True","type":"VirtualMachineClassReady"},{"lastTransitionTime":"2026-02-08T13:59:52Z","message":"","reason":"True","status":"True","type":"VirtualMachineConditionPlacementReady"},{"lastTransitionTime":"2026-02-08T14:10:49Z","message":"","reason":"True","status":"True","type":"VirtualMachineCreated"},{"lastTransitionTime":"2026-02-01T23:01:17Z","message":"","reason":"True","status":"True","type":"VirtualMachineImageReady"},{"lastTransitionTime":"2026-02-08T13:59:52Z","message":"","reason":"True","status":"True","type":"VirtualMachineNetworkReady"},{"lastTransitionTime":"2026-02-08T14:10:50Z","message":"","reason":"True","status":"True","type":"VirtualMachineReconcileReady"},{"lastTransitionTime":"2026-02-08T13:59:48Z","message":"","reason":"True","status":"True","type":"VirtualMachineStorageReady"},{"lastTransitionTime":"2026-02-08T14:12:23Z","message":"","reason":"True","status":"True","type":"VirtualMachineTools"}],"hardwareVersion":22,"instanceUUID":"e0dea771-eab7-449c-b26e-de4e3388e823","network":{"config":{"dns":{"hostName":"vm-q5ds","nameservers":["192.168.11.253"]},"interfaces":[{"ip":{"addresses":["192.173.237.3/27"],"gateway4":"192.173.237.1"},"name":"eth0"}]},"hostName":"vm-q5ds","interfaces":[{"deviceKey":4000,"ip":{"addresses":[{"address":"192.173.237.3","lifetime":null,"state":"preferred"},{"address":"fe80::650:56ff:fe00:4000","lifetime":null,"state":"unknown"}],"macAddr":"04:50:56:00:40:00"},"name":"eth0"}],"ipStacks":[{"dns":{"domainName":".","hostName":"vm-q5ds","nameservers":["192.168.11.253"],"searchDomains":["."]},"ipRoutes":[{"gateway":{"address":"192.173.237.1","device":"0"},"networkAddress":"0.0.0.0/0"},{"gateway":{"device":"0"},"networkAddress":"192.173.237.0/27"}]}],"primaryIP4":"192.173.237.3"},"nodeName":"esx-vcf9-mgmt-04.corp.internal","powerState":"PoweredOn","storage":{"requested":{"disks":"20Gi"},"total":"20Gi","usage":{"disks":"12Gi","other":"0"}},"uniqueID":"vm-6466","volumes":[{"attached":true,"diskUUID":"6000C292-297b-0054-ee1a-d5a824083871","limit":"20Gi","name":"vm-q5ds","requested":"20Gi","type":"Classic","used":"12Gi"}],"zone":"mgmt-01-zone-01"}}
+    vmoperator.vmware.com/created-at-build-version: 0.1.0+407e86d+1.8.6+1e61280e+24915586
+    vmoperator.vmware.com/created-at-schema-version: v1alpha4
+    vmoperator.vmware.com/last-resized-vm-class: >-
+      {"name":"best-effort-xsmall","uid":"88180976-f593-491f-aa03-5922cec99021","generation":1}
+    vmoperator.vmware.com/manager-id: d2888fdb-cea0-46e5-ad30-091d3c53be7d
+    vmoperator.vmware.com/upgraded-to-build-version: 0.1.0+407e86d+1.8.6+1e61280e+24915586
+    vmoperator.vmware.com/upgraded-to-schema-version: v1alpha4
+  creationTimestamp: '2026-02-08T13:59:47Z'
+  finalizers:
+    - vmoperator.vmware.com/virtualmachine
+  generation: 1
+  labels:
+    topology.kubernetes.io/zone: mgmt-01-zone-01
+    vm-selector: vm-q5ds
+  name: vm-q5ds
+  namespace: provider-ns01-m2q4h
+  resourceVersion: '46388936'
+  uid: 0a0eb6e1-593e-4094-b36d-5e2d6e82eaee
+spec:
+  biosUUID: 2e4665b8-d909-45d5-b312-a193dad28852
+  className: best-effort-xsmall
+  image:
+    kind: ClusterVirtualMachineImage
+    name: vmi-b02c32b0f7a7c7dec
+  imageName: vmi-b02c32b0f7a7c7dec
+  instanceUUID: e0dea771-eab7-449c-b26e-de4e3388e823
+  network:
+    interfaces:
+      - name: eth0
+        network:
+          apiVersion: crd.nsx.vmware.com/v1alpha1
+          kind: SubnetSet
+          name: ''
+  powerOffMode: TrySoft
+  powerState: PoweredOn
+  restartMode: TrySoft
+  storageClass: vc-vcf9-mgmt-cl01-vsan-storage-policy
+  suspendMode: TrySoft
+status:
+  biosUUID: 2e4665b8-d909-45d5-b312-a193dad28852
+  changeBlockTracking: false
+  class:
+    apiVersion: vmoperator.vmware.com/v1alpha4
+    kind: VirtualMachineClass
+    name: best-effort-xsmall
+  conditions:
+    - lastTransitionTime: '2026-03-16T16:01:59Z'
+      message: ''
+      reason: 'True'
+      status: 'True'
+      type: GuestCustomization
+    - lastTransitionTime: '2026-02-08T14:12:23Z'
+      message: ''
+      reason: 'True'
+      status: 'True'
+      type: VirtualMachineTools
+    - lastTransitionTime: '2026-02-08T14:11:10Z'
+      message: 'Backup version: 1770559868766'
+      reason: 'True'
+      status: 'True'
+      type: VirtualMachineBackupUpToDate
+    - lastTransitionTime: '2026-02-08T14:10:50Z'
+      message: ''
+      reason: 'True'
+      status: 'True'
+      type: VirtualMachineReconcileReady
+    - lastTransitionTime: '2026-02-08T14:10:50Z'
+      message: ''
+      reason: 'True'
+      status: 'True'
+      type: VirtualMachineClassConfigurationSynced
+    - lastTransitionTime: '2026-02-08T14:10:49Z'
+      message: ''
+      reason: 'True'
+      status: 'True'
+      type: VirtualMachineCreated
+    - lastTransitionTime: '2026-02-08T13:59:52Z'
+      message: ''
+      reason: 'True'
+      status: 'True'
+      type: VirtualMachineNetworkReady
+    - lastTransitionTime: '2026-02-08T13:59:52Z'
+      message: ''
+      reason: 'True'
+      status: 'True'
+      type: VirtualMachineConditionPlacementReady
+    - lastTransitionTime: '2026-02-08T13:59:48Z'
+      message: ''
+      reason: 'True'
+      status: 'True'
+      type: VirtualMachineStorageReady
+    - lastTransitionTime: '2026-02-08T13:59:48Z'
+      message: ''
+      reason: 'True'
+      status: 'True'
+      type: VirtualMachineClassReady
+    - lastTransitionTime: '2026-02-01T23:01:17Z'
+      message: ''
+      reason: 'True'
+      status: 'True'
+      type: VirtualMachineImageReady
+  hardwareVersion: 22
+  host: esx-vcf9-mgmt-04.corp.internal
+  instanceUUID: e0dea771-eab7-449c-b26e-de4e3388e823
+  network:
+    config:
+      dns:
+        hostName: vm-q5ds
+        nameservers:
+          - 192.168.11.253
+      interfaces:
+        - ip:
+            addresses:
+              - 192.173.237.3/27
+            gateway4: 192.173.237.1
+          name: eth0
+    hostName: vm-q5ds
+    interfaces:
+      - deviceKey: 4000
+        ip:
+          addresses:
+            - address: 192.173.237.3
+              state: preferred
+            - address: fe80::650:56ff:fe00:4000
+              state: unknown
+          macAddr: '04:50:56:00:40:00'
+        name: eth0
+    ipStacks:
+      - dns:
+          domainName: .
+          hostName: vm-q5ds
+          nameservers:
+            - 192.168.11.253
+          searchDomains:
+            - .
+        ipRoutes:
+          - gateway:
+              address: 192.173.237.1
+              device: '0'
+            networkAddress: 0.0.0.0/0
+          - gateway:
+              device: '0'
+            networkAddress: 192.173.237.0/27
+    primaryIP4: 192.173.237.3
+  powerState: PoweredOn
+  storage:
+    usage:
+      disks: 20Gi
+      other: '0'
+      total: 20Gi
+  uniqueID: vm-6466
+  volumes:
+    - attached: true
+      diskUUID: 6000C292-297b-0054-ee1a-d5a824083871
+      limit: 20Gi
+      name: vm-q5ds
+      type: Classic
+      used: 12Gi
+  zone: mgmt-01-zone-01
