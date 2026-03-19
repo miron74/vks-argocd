@@ -24,7 +24,7 @@ metadata:
     topology.kubernetes.io/zone: mgmt-01-zone-01
     vm-selector: vm02
   name: vm02
-  namespace: provider-ns01-m2q4h
+  namespace: argocd-test02
   resourceVersion: '46388936'
   uid: 0a0eb6e1-593e-4094-b36d-5e2d6e82eaee
 spec:
