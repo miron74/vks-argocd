@@ -2,7 +2,7 @@ apiVersion: vmoperator.vmware.com/v1alpha3
 kind: VirtualMachine
 metadata:
   name: vm01
-  namespace: provider-ns01-m2q4h
+  namespace: argocd-test
   labels:
     vm-selector: vm01
     vm-lb-wq77: vm-lb-selector

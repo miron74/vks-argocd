@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: vm01-pvc-0
-  namespace: provider-ns01-m2q4h
+  namespace: argocd-test
   labels:
     vm-selector: vm01
   annotations:
