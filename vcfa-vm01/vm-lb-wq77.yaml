@@ -1,0 +1,14 @@
+apiVersion: vmoperator.vmware.com/v1alpha3
+kind: VirtualMachineService
+metadata:
+  name: vm-lb-wq77
+  namespace: provider-ns01-m2q4h
+spec:
+  selector:
+    vm-lb-wq77: vm-lb-selector
+  type: LoadBalancer
+  ports:
+    - name: ssh
+      protocol: TCP
+      port: 22
+      targetPort: 22
