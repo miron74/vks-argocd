@@ -1,0 +1,22 @@
+apiVersion: databases.dataservices.vmware.com/v1alpha1
+kind: PostgresCluster
+spec:
+  adminUsername: pgadmin
+  databaseName: vcfa-db01
+  version: '17'
+  storageSpace: 60Gi
+  storagePolicyName: vSAN Default Storage Policy
+  infrastructurePolicy:
+    name: dsm-policy-02
+  replicas: 0
+  vmClass:
+    name: small
+  adminPasswordRef:
+    name: secret-1773995274784
+  maintenanceWindow:
+    duration: 6h
+    startDay: SATURDAY
+    startTime: '21:59'
+metadata:
+  name: vcfa-db01
+  namespace: provider-ns02-h94sk
