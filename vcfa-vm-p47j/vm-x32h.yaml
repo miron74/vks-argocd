@@ -1,0 +1,28 @@
+apiVersion: vmoperator.vmware.com/v1alpha3
+kind: VirtualMachine
+metadata:
+  name: vm-x32h
+  namespace: provider-ns01-m2q4h
+  labels:
+    vm-selector: vm-x32h
+    vm-lb-z5ek: vm-lb-selector
+    topology.kubernetes.io/zone: mgmt-01-zone-01
+spec:
+  className: best-effort-small
+  # Friendly image name: ob-25217799-ubuntu-2404-amd64-v1.35.0---vmware.2-vkr.4
+  imageName: vmi-fff0fa8d10dba9cf8
+  storageClass: vc-vcf9-mgmt-cl01-vsan-storage-policy
+  powerState: PoweredOff
+  network:
+    interfaces:
+      - name: eth99
+        network:
+          name: vm-default
+          kind: SubnetSet
+    hostName: myvm02
+    domainName: corp.internal
+  bootstrap:
+    cloudInit:
+      cloudConfig:
+        defaultUserEnabled: true
+        ssh_pwauth: true
