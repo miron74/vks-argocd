@@ -12,7 +12,7 @@ spec:
   # Friendly image name: ob-25217799-ubuntu-2404-amd64-v1.35.0---vmware.2-vkr.4
   imageName: vmi-fff0fa8d10dba9cf8
   storageClass: vc-vcf9-mgmt-cl01-vsan-storage-policy
-  powerState: PoweredOff
+  powerState: PoweredOn
   network:
     interfaces:
       - name: eth99
